@@ -20,7 +20,7 @@ A sleek and responsive music player built with **React**, **Vite**, and **Materi
 - **Material UI (MUI v5)**
 - **@material/material-color-utilities**
 - **React Router**
-- **Axios / fetch for API**
+- **fetch for API**
 - **Custom proxy API via Vite config**
 
 ---
