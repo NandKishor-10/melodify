@@ -29,5 +29,5 @@ A sleek and responsive music player built with **React**, **Vite**, and **Materi
 
 ```bash
 git clone https://github.com/NandKishor-10/melodify.git
-cd melidify
+cd melodify
 npm install
