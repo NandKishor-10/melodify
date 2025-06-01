@@ -20,7 +20,6 @@ export default function App() {
           ? darken(argbToHex(md3Colors.primaryContainer), 0.2)
           : lighten(argbToHex(md3Colors.primaryContainer), 0.2),
         color: argbToHex(md3Colors.onPrimaryContainer),
-        cursor: isDarkMode ? 'url(/cursor_white.png), auto' : 'url(/cursor_black.png), auto',
         userSelect: 'none',
       }}
     >
