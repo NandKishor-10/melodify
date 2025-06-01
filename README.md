@@ -4,6 +4,15 @@ A sleek and responsive music player built with **React**, **Vite**, and **Materi
 
 ---
 
+## 📦 Installation
+
+```bash
+git clone https://github.com/NandKishor-10/melodify.git
+cd melodify
+npm install
+
+---
+
 ## 🚀 Features
 
 - 🎧 Play, pause, and seek songs
@@ -22,12 +31,3 @@ A sleek and responsive music player built with **React**, **Vite**, and **Materi
 - **React Router**
 - **fetch for API**
 - **Custom proxy API via Vite config**
-
----
-
-## 📦 Installation
-
-```bash
-git clone https://github.com/NandKishor-10/melodify.git
-cd melodify
-npm install
