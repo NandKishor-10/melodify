@@ -10,6 +10,7 @@ A sleek and responsive music player built with **React**, **Vite**, and **Materi
 git clone https://github.com/NandKishor-10/melodify.git
 cd melodify
 npm install
+```
 
 ---
 
