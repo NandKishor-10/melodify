@@ -1,4 +1,4 @@
-# 🎵 Melidify - A Minimal Music Player
+# 🎵 Melodify - A Minimal Music Player
 
 A sleek and responsive music player built with **React**, **Vite**, and **Material UI (MUI)**. It streams songs using a proxy API and supports Material Design 3 (MD3) theming with dark/light mode support.
 
@@ -11,7 +11,12 @@ git clone https://github.com/NandKishor-10/melodify.git
 cd melodify
 npm install
 ```
+---
+## ⏯️ Start
 
+```bash
+npm run dev
+```
 ---
 
 ## 🚀 Features
