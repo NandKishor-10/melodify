@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Home from './screens/home'
 import Player from './screens/player'
 import Header from './components/Header'
 import { useMd3Theme } from './components/colors'
 import { lighten, darken } from '@mui/material'
+import Home from './screens/Home'
 
 export default function App() {
   const { argbToHex, isDarkMode, md3Colors, toggleDarkMode } = useMd3Theme()
