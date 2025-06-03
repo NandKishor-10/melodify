@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Home() {
+export default function Home({argbToHex, isDarkMode, md3Colors}) {
   return (
     <div
       style={{
@@ -11,7 +11,11 @@ export default function Home() {
         alignItems: 'center',
       }}
     > 
-    <h2>Start searching</h2>
+    <h1
+      style={{
+        color: argbToHex(md3Colors.primary),
+      }}
+    >Start searching and keep Vibing</h1>
     </div>
   )
 }
