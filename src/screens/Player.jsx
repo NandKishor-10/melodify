@@ -18,6 +18,9 @@ export default function Player({ argbToHex, isDarkMode, md3Colors }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [selectedQuality, setSelectedQuality] = useState('');
 
+  const param = useParams();
+  console.log(param);
+
   useEffect(() => {
     fetchSingleSong(songId).then((data) => {
       const s = data.data[0];
