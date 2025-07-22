@@ -48,7 +48,6 @@ function Header({ argbToHex, isDarkMode, md3Colors, toggleDarkMode }) {
           padding: '1rem',
         }}
       >
-
         <img
           src={logoIcon}
           height={60}
@@ -61,7 +60,10 @@ function Header({ argbToHex, isDarkMode, md3Colors, toggleDarkMode }) {
             borderRadius: '16px',
             cursor: 'pointer'
           }}
-          onClick={gotoHome}
+          onClick={() => {
+            resetSearch()
+            gotoHome()
+          }}
         />
 
         <Box sx={{
@@ -71,7 +73,8 @@ function Header({ argbToHex, isDarkMode, md3Colors, toggleDarkMode }) {
           <TextField
             inputRef={inputRef}
             id='searchField'
-            label='Search for a song, artist, or album'
+            // label='Search for a song, artist, or album'
+            label='Search for a song'
             variant='filled'
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -102,9 +105,10 @@ function Header({ argbToHex, isDarkMode, md3Colors, toggleDarkMode }) {
               },
               '& .MuiInputLabel-root': {
                 color: darken(argbToHex(md3Colors.onPrimaryContainer), 0.3),
-                fontSize: '0.9rem',
+                fontSize: '1.1rem',
                 '&.Mui-focused': {
                   color: darken(argbToHex(md3Colors.onPrimaryContainer), 0.2),
+                  fontSize: '1rem',
                 },
               },
             }}
@@ -143,6 +147,7 @@ function Header({ argbToHex, isDarkMode, md3Colors, toggleDarkMode }) {
           {isDarkMode ? <LightModeRounded /> : <DarkModeRounded />}
         </IconButton>
       </div>
+
       {searchQuery &&
         <Search
           query={searchQuery}
