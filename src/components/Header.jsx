@@ -3,6 +3,7 @@ import { Box, darken, IconButton, lighten, TextField, useMediaQuery, useTheme } 
 import { DarkModeRounded, LightModeRounded } from '@mui/icons-material'
 import Search from '../screens/Search'
 import logoIcon from '../assets/logo_icon.png'
+import useNavigation from './Navigation'
 
 function Header({ argbToHex, isDarkMode, md3Colors, toggleDarkMode }) {
   const theme = useTheme()
@@ -10,6 +11,7 @@ function Header({ argbToHex, isDarkMode, md3Colors, toggleDarkMode }) {
   const inputRef = useRef(null)
   const [searchQuery, setSearchQuery] = useState('')
   const resetSearch = () => setSearchQuery('')
+  const { gotoHome } = useNavigation()
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -59,6 +61,7 @@ function Header({ argbToHex, isDarkMode, md3Colors, toggleDarkMode }) {
             borderRadius: '16px',
             cursor: 'pointer'
           }}
+          onClick={gotoHome}
         />
 
         <Box sx={{
@@ -137,7 +140,7 @@ function Header({ argbToHex, isDarkMode, md3Colors, toggleDarkMode }) {
             color: argbToHex(md3Colors.onSecondaryContainer)
           }}
         >
-          {isDarkMode? <LightModeRounded /> : <DarkModeRounded /> }
+          {isDarkMode ? <LightModeRounded /> : <DarkModeRounded />}
         </IconButton>
       </div>
       {searchQuery &&
