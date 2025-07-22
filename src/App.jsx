@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Player from './screens/player'
+import Player from './screens/Player'
+import Error from './screens/Error'
 import Header from './components/Header'
 import { useMd3Theme } from './components/colors'
 import { lighten, darken } from '@mui/material'
@@ -8,7 +9,6 @@ import Home from './screens/Home'
 export default function App() {
   const { argbToHex, isDarkMode, md3Colors, toggleDarkMode } = useMd3Theme()
   return (
-    // <BrowserRouter basename="/melodify/">
     <div
       style={{
         display: 'flex',
@@ -34,12 +34,14 @@ export default function App() {
         <Route path='/melodify/player/:id' element={<Player argbToHex={argbToHex}
           isDarkMode={isDarkMode} md3Colors={md3Colors} />} />
 
-        <Route path="*"
-          element={<div><h1>404 - Not Found</h1><p>The page you're looking for doesn't exist.</p></div>}
+        <Route path="/melodify/*"
+          element={
+            <Error argbToHex={argbToHex} isDarkMode={isDarkMode} md3Colors={md3Colors} />
+          // <div><h1>404 - Not Found</h1><p>The page you're looking for doesn't exist.</p></div>
+        }
         />
 
       </Routes>
     </div>
-    // </BrowserRouter>
   )
 }
