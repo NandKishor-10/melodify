@@ -242,7 +242,6 @@ export default function Player({ argbToHex, isDarkMode, md3Colors }) {
             >
               {item.quality}
             </MenuItem>
-
           ))}
         </Select>
       </Box>

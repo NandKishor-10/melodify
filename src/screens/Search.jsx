@@ -18,8 +18,6 @@ export default function Search({ query, resetSearch, argbToHex, isDarkMode, md3C
       .then((data) => setSongs(data.data.results))
       .catch(console.error)
   }, [query])
-
-  console.log('songs', songs);
   
   return (
     // <h1>Action kamen</h1>
@@ -27,7 +25,7 @@ export default function Search({ query, resetSearch, argbToHex, isDarkMode, md3C
       sx={{
         overflow: 'auto',
         width: '100%',
-        minHeight: '55vh',
+        my: '2rem',
         msOverflowStyle: 'none',
         scrollbarWidth: 'none',
       }}
