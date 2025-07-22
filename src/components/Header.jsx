@@ -72,7 +72,6 @@ function Header({ argbToHex, isDarkMode, md3Colors, toggleDarkMode }) {
           <TextField
             inputRef={inputRef}
             id='searchField'
-            // label='Search for a song, artist, or album'
             label='Search for a song'
             variant='filled'
             value={searchQuery}
