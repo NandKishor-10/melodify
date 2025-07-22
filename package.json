@@ -1,7 +1,6 @@
 {
   "name": "melodify",
   "private": true,
-  "proxy": "https://saavn-api.vercel.app",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

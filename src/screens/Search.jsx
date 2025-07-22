@@ -4,6 +4,7 @@ import { Box } from '@mui/material'
 import SongView from '../components/SongView'
 import { fetchSongs } from '../components/apiService'
 
+
 export default function Search({ query, resetSearch, argbToHex, isDarkMode, md3Colors, }) {
   const [songs, setSongs] = useState([])
 
@@ -12,11 +13,14 @@ export default function Search({ query, resetSearch, argbToHex, isDarkMode, md3C
       setSongs([])
       return
     }
+
     fetchSongs(query)
-      .then(setSongs)
+      .then((data) => setSongs(data.data.results))
       .catch(console.error)
   }, [query])
 
+  console.log('songs', songs);
+  
   return (
     // <h1>Action kamen</h1>
     <Box

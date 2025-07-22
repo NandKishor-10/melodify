@@ -5,9 +5,9 @@ import { formatTime } from './utils'
 
 function SongView({ song, resetSearch, argbToHex, isDarkMode, md3Colors }) {
   const { gotoPlayer } = useNavigation()
-  const artists = song.artists
-  const title = song.title
-  const image = song.image
+  const image = song.image[0].url
+  const title = song.name
+  const artistNames = song.artists.primary.map(a => a.name).join(', ');
 
   return (
     <Box
@@ -70,7 +70,7 @@ function SongView({ song, resetSearch, argbToHex, isDarkMode, md3Colors }) {
               fontWeight: 500,
             }}
           >
-            {artists}
+            {artistNames}
           </Typography>
           <Typography
             variant='body2'

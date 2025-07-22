@@ -8,6 +8,7 @@ import Home from './screens/Home'
 export default function App() {
   const { argbToHex, isDarkMode, md3Colors, toggleDarkMode } = useMd3Theme()
   return (
+    // <BrowserRouter basename="/melodify/">
     <div
       style={{
         display: 'flex',
@@ -27,16 +28,18 @@ export default function App() {
         md3Colors={md3Colors} toggleDarkMode={toggleDarkMode} />
       <Routes>
 
-        <Route path="/" element={<Home argbToHex={argbToHex}
+        <Route path="/melodify/" element={<Home argbToHex={argbToHex}
           isDarkMode={isDarkMode} md3Colors={md3Colors} />} />
 
-        <Route path='/player/:id' element={<Player argbToHex={argbToHex}
+        <Route path='/melodify/player/:id' element={<Player argbToHex={argbToHex}
           isDarkMode={isDarkMode} md3Colors={md3Colors} />} />
 
         <Route path="*"
-          element={<div><h1>404 - Not Found</h1><p>The page you're looking for doesn't exist.</p></div>} />
+          element={<div><h1>404 - Not Found</h1><p>The page you're looking for doesn't exist.</p></div>}
+        />
 
       </Routes>
     </div>
+    // </BrowserRouter>
   )
 }
