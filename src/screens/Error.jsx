@@ -1,5 +1,5 @@
 import { Box, Typography, Button } from '@mui/material';
-import useNavigation from '../components/Navigation';
+import useNavigation from '../utils/Navigation';
 import { HomeOutlined, HomeRounded } from '@mui/icons-material';
 
 export default function Error({ argbToHex, isDarkMode, md3Colors }) {

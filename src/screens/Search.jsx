@@ -2,8 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import Grid from '@mui/material/Grid'
 import { Box } from '@mui/material'
 import SongView from '../components/SongView'
-import { fetchSongs } from '../components/apiService'
-
+import { fetchSongs } from '../http/api'
 
 export default function Search({ query, resetSearch, argbToHex, isDarkMode, md3Colors, }) {
   const [songs, setSongs] = useState([])

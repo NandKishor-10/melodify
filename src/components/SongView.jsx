@@ -1,7 +1,6 @@
 import { Box, IconButton, lighten, Typography, useMediaQuery, useTheme } from '@mui/material'
-import useNavigation from './Navigation'
-import { formatTime } from './utils'
-
+import useNavigation from '../utils/Navigation'
+import formatTime from '../utils/formatTime'
 
 function SongView({ song, resetSearch, argbToHex, isDarkMode, md3Colors }) {
   const { gotoPlayer } = useNavigation()

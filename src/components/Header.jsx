@@ -3,7 +3,7 @@ import { Box, darken, IconButton, lighten, TextField, useMediaQuery, useTheme } 
 import { DarkModeRounded, LightModeRounded } from '@mui/icons-material'
 import Search from '../screens/Search'
 import logoIcon from '../assets/logo_icon.png'
-import useNavigation from './Navigation'
+import useNavigation from '../utils/Navigation'
 
 function Header({ argbToHex, isDarkMode, md3Colors, toggleDarkMode }) {
   const theme = useTheme()
@@ -20,7 +20,6 @@ function Header({ argbToHex, isDarkMode, md3Colors, toggleDarkMode }) {
         inputRef.current?.focus()
       }
     }
-
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [])
