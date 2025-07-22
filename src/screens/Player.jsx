@@ -4,8 +4,8 @@ import {
 } from '@mui/material';
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchSingleSong } from '../components/apiService';
-import { formatTime } from '../components/utils';
+import { fetchSingleSong } from '../http/api';
+import formatTime from '../utils/formatTime';
 import { Forward5Rounded, PauseRounded, PlayArrowRounded, Replay5Rounded } from '@mui/icons-material';
 
 export default function Player({ argbToHex, isDarkMode, md3Colors }) {
@@ -196,9 +196,9 @@ export default function Player({ argbToHex, isDarkMode, md3Colors }) {
           displayEmpty
           variant="outlined"
           sx={{
-            backgroundColor: isDarkMode 
-            ? lighten(argbToHex(md3Colors.tertiaryContainer), 0.2)
-            : lighten(argbToHex(md3Colors.tertiaryContainer), 0.5),
+            backgroundColor: isDarkMode
+              ? lighten(argbToHex(md3Colors.tertiaryContainer), 0.2)
+              : lighten(argbToHex(md3Colors.tertiaryContainer), 0.5),
             color: argbToHex(md3Colors.onTertiaryContainer),
             borderRadius: '1rem',
             fontSize: '0.8rem',
@@ -208,7 +208,7 @@ export default function Player({ argbToHex, isDarkMode, md3Colors }) {
               borderColor: argbToHex(md3Colors.primary),
               borderWidth: '2px',
             },
-            
+
             '& .MuiSelect-icon': {
               color: argbToHex(md3Colors.onSecondaryContainer),
             },
