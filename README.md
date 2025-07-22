@@ -1,39 +1,34 @@
-# 🎵 Melodify - A Minimal Music Player
+# 🎵 Melodify
 
-A sleek and responsive music player built with **React**, **Vite**, and **Material UI (MUI)**. It streams songs using a proxy API and supports Material Design 3 (MD3) theming with dark/light mode support.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Last Commit](https://img.shields.io/github/last-commit/NandKishor-10/melodify)
+![Repo Size](https://img.shields.io/github/repo-size/NandKishor-10/melodify)
+[![Access It](https://img.shields.io/badge/Access%20It-Melodify-blue)](https://nandkishor-10.github.io/melodify/)
 
----
+Melodify is a minimal and elegant music player for streaming songs.
 
-## 📦 Installation
+It features a clean interface, dark/light theme support, and smooth playback.
 
-```bash
-git clone https://github.com/NandKishor-10/melodify.git
-cd melodify
-npm install
-```
----
-## ⏯️ Start
-
-```bash
-npm run dev
-```
----
-
-## 🚀 Features
-
-- 🎧 Play, pause, and seek songs
-- 🌓 Dynamic MD3 theming (light/dark mode)
-- 📱 Responsive design (mobile-friendly)
-- 🎨 Custom color palette using Material Color Utilities
-- 🌐 API proxy setup for secure backend requests
+Powered by the public [JioSaavn API by @sumitkolhe](https://github.com/sumitkolhe/jiosaavn-api).
 
 ---
 
-## 🛠️ Tech Stack
+## 🌐 Access It
 
-- **React 18** + **Vite**
-- **Material UI (MUI v5)**
-- **@material/material-color-utilities**
-- **React Router**
-- **fetch for API**
-- **Custom proxy API via Vite config**
+▶️ [https://nandkishor-10.github.io/melodify/](https://nandkishor-10.github.io/melodify/)
+
+---
+
+## 🧑‍💻 Author
+
+Assembled at 2 AM with bugs attacking from all directions 🪳💥  
+Survived with chai in hand ☕ and Google as my co-pilot 🧠💻  
+Made by [@NandKishor-10](https://github.com/NandKishor-10), who definitely didn’t scream at the screen (much) 😤
+
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).  
+You are free to use, modify, and distribute it.
