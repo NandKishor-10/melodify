@@ -24,22 +24,21 @@ export default function App() {
         userSelect: 'none',
       }}
     >
-      <Header argbToHex={argbToHex} isDarkMode={isDarkMode}
-        md3Colors={md3Colors} toggleDarkMode={toggleDarkMode} />
+      <Header argbToHex={argbToHex} isDarkMode={isDarkMode} md3Colors={md3Colors} toggleDarkMode={toggleDarkMode} />
+      
       <Routes>
 
-        <Route path="/melodify/" element={<Home argbToHex={argbToHex}
-          isDarkMode={isDarkMode} md3Colors={md3Colors} />} />
+        <Route path="/melodify/" element={
+          <Home argbToHex={argbToHex} isDarkMode={isDarkMode} md3Colors={md3Colors} />
+        } />
 
-        <Route path='/melodify/player/:id' element={<Player argbToHex={argbToHex}
-          isDarkMode={isDarkMode} md3Colors={md3Colors} />} />
+        <Route path='/melodify/player/:id' element={
+          <Player argbToHex={argbToHex} isDarkMode={isDarkMode} md3Colors={md3Colors} />
+        } />
 
-        <Route path="/melodify/*"
-          element={
-            <Error argbToHex={argbToHex} isDarkMode={isDarkMode} md3Colors={md3Colors} />
-            // <div><h1>404 - Not Found</h1><p>The page you're looking for doesn't exist.</p></div>
-          }
-        />
+        <Route path="/melodify/*" element={
+          <Error argbToHex={argbToHex} isDarkMode={isDarkMode} md3Colors={md3Colors} />
+        } />
 
       </Routes>
     </div>
