@@ -1,6 +1,6 @@
-const API_URL = "https://saavn.dev/api"
+const API_URL = import.meta.env.VITE_API_URL
 
-export async function fetchSongs(query) {
+export async function fetchSongs(query) {  
   const response = await fetch(`${API_URL}/search/songs?query=${query}&limit=10`)
   return await response.json()
 }
