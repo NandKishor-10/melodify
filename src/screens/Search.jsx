@@ -15,7 +15,6 @@ export default function Search({ query, resetSearch, argbToHex, isDarkMode, md3C
 
     fetchSongs(query)
       .then((data) => setSongs(data.data.results))
-      .catch(console.error)
   }, [query])
   
   return (
