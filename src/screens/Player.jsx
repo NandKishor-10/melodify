@@ -7,6 +7,7 @@ import { Forward5Rounded, PauseRounded, PlayArrowRounded, Replay5Rounded, Restar
 import { useParams } from 'react-router-dom';
 import { fetchSingleSong } from '../http/api';
 import formatTime from '../utils/formatTime';
+import formateString from '../utils/formatString';
 
 export default function Player({ argbToHex, isDarkMode, md3Colors }) {
   const isMobile = useMediaQuery(useTheme().breakpoints.down('sm'));
@@ -41,7 +42,7 @@ export default function Player({ argbToHex, isDarkMode, md3Colors }) {
 
     const updateTime = () => setCurrentTime(audio.currentTime);
     const onPlay = () => {
-      setHasEnded(false); // Reset end state on play
+      setHasEnded(false);
       setIsPlaying(true);
     };
     const onPause = () => setIsPlaying(false);
@@ -52,7 +53,7 @@ export default function Player({ argbToHex, isDarkMode, md3Colors }) {
 
     audio.src = selectedQuality;
     audio.load();
-    audio.play().catch(() => setIsPlaying(false)); // autoplay attempt
+    audio.play().catch(() => setIsPlaying(false));
 
     audio.addEventListener('timeupdate', updateTime);
     audio.addEventListener('play', onPlay);
@@ -71,7 +72,7 @@ export default function Player({ argbToHex, isDarkMode, md3Colors }) {
   if (!song) return null;
 
   const image = song.image[song.image.length - 1].url;
-  const title = song.name;
+  const title = formateString(song.name);
   const artists = song.artists.primary.map(a => a.name).join(', ');
   const duration = song.duration;
 
@@ -127,7 +128,7 @@ export default function Player({ argbToHex, isDarkMode, md3Colors }) {
     <Box
       sx={{
         display: 'flex', flexDirection: 'column', height: isMobile ?'65%' : '100%', 
-        py: 4, my: 3, width: isMobile? '95%' : '75%',
+        py: 4, my: 3, width: isMobile? '95%' : '62.5%',
         alignItems: 'center', justifyContent: 'center', alignSelf: 'center',
         overflow: 'auto', scrollbarWidth: 'none', borderRadius: '1rem',
         backgroundColor: isDarkMode
@@ -142,7 +143,7 @@ export default function Player({ argbToHex, isDarkMode, md3Colors }) {
 
       <span
         style={{
-          display: 'flex', width: '75%', flexDirection: isMobile ? 'column' : 'row',
+          display: 'flex', width: '62.5%', flexDirection: isMobile ? 'column' : 'row',
           alignItems: 'center', justifyContent: 'center', gap: '10%',
         }}
       >
@@ -150,8 +151,8 @@ export default function Player({ argbToHex, isDarkMode, md3Colors }) {
           src={image}
           alt='Album Cover'
           style={{
-            // width: isMobile ? '45vw' : '35vh',
-            height: isMobile ? '45vw' : '35vh',
+            width: isMobile ? '62.5%' : '35%',
+            // height: isMobile ? '45vw' : '35vh',
             objectFit: 'fill', borderRadius: '2rem',
             boxShadow: '0 8px 30px rgba(0,0,0,0.3)', marginBottom: '2rem',
           }}
@@ -189,12 +190,12 @@ export default function Player({ argbToHex, isDarkMode, md3Colors }) {
         <Typography variant='caption' sx={{ alignSelf: 'flex-end' }}>{formatTime(duration)}</Typography>
 
         <Box sx={{ display: 'flex', width: '100%', justifyContent: 'space-evenly', alignItems: 'center', mt: 1 }}>
-          <IconButton onClick={() => skip(-5)} sx={{ color: argbToHex(md3Colors.onPrimaryContainer) }}>
+          <IconButton onClick={() => skip(-5)} sx={{ color: argbToHex(md3Colors.secondary) }}>
             <Replay5Rounded fontSize='large' />
           </IconButton>
           <IconButton onClick={togglePlayPause}
             sx={{
-              color: argbToHex(md3Colors.onPrimaryContainer),
+              color: argbToHex(md3Colors.primary),
               width: 64,
               borderRadius: isPlaying ? '1rem' : '50%',
               height: 64,
@@ -212,7 +213,7 @@ export default function Player({ argbToHex, isDarkMode, md3Colors }) {
             )}
 
           </IconButton>
-          <IconButton onClick={() => skip(5)} sx={{ color: argbToHex(md3Colors.onPrimaryContainer) }}>
+          <IconButton onClick={() => skip(5)} sx={{ color: argbToHex(md3Colors.secondary) }}>
             <Forward5Rounded fontSize='large' />
           </IconButton>
         </Box>

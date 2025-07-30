@@ -25,39 +25,34 @@ function Header({ argbToHex, isDarkMode, md3Colors, toggleDarkMode }) {
   }, [])
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        width: '100%',
-        flexDirection: 'column',
+    <Box
+      sx={{
+        width: isMobile ? '100%' : '85%',
         backgroundColor: argbToHex(md3Colors.primaryContainer),
-        borderBottomRightRadius: '32px',
+        alignSelf: 'center',
+        justifyItems: 'center',
         borderBottomLeftRadius: '32px',
+        borderBottomRightRadius: '32px',
         boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.20)',
       }}
     >
-      <div
-        style={{
+      <Box
+        sx={{
           display: 'flex',
           width: '90%',
           alignSelf: 'center',
           flexDirection: 'row',
           justifyContent: 'space-between',
-          color: argbToHex(md3Colors.onPrimaryContainer),
           padding: '1rem',
         }}
       >
         <img
           src={logoIcon}
-          height={60}
           alt='Logo'
           style={{
             height: '50px',
-            display: 'flex',
-            alignItems: 'center',
-            marginRight: '10px',
             borderRadius: '16px',
-            cursor: 'pointer'
+            cursor: 'pointer',          
           }}
           onClick={() => {
             resetSearch()
@@ -67,7 +62,7 @@ function Header({ argbToHex, isDarkMode, md3Colors, toggleDarkMode }) {
 
         <Box sx={{
           position: 'relative',
-          width: isMobile ? '60%' : '40%'
+          width: '62.5%'
         }}>
           <TextField
             inputRef={inputRef}
@@ -132,19 +127,19 @@ function Header({ argbToHex, isDarkMode, md3Colors, toggleDarkMode }) {
 
         <IconButton
           onClick={() => toggleDarkMode()}
-          style={{
+          sx={{
             backgroundColor: argbToHex(md3Colors.secondaryContainer),
-            borderRadius: '1rem',
+            color: argbToHex(md3Colors.onSecondaryContainer),
             padding: 0,
-            overflow: 'hidden',
             height: '50px',
             width: '50px',
-            color: argbToHex(md3Colors.onSecondaryContainer)
+            overflow: 'hidden',
+            borderRadius: '1rem',
           }}
         >
           {isDarkMode ? <LightModeRounded /> : <DarkModeRounded />}
         </IconButton>
-      </div>
+      </Box>
 
       {searchQuery &&
         <Search
@@ -155,7 +150,7 @@ function Header({ argbToHex, isDarkMode, md3Colors, toggleDarkMode }) {
           md3Colors={md3Colors}
         />
       }
-    </div>
+    </Box>
   )
 }
 
