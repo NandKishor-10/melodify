@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Box, darken, IconButton, lighten, TextField, useMediaQuery, useTheme } from '@mui/material'
 import { DarkModeRounded, LightModeRounded } from '@mui/icons-material'
 import Search from '../screens/Search'
-import logoIcon from '../assets/logo_icon.png'
+import logoIcon from '../assets/logo.png'
 import useNavigation from '../utils/Navigation'
 
 function Header({ argbToHex, isDarkMode, md3Colors, toggleDarkMode }) {
