@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { themeFromSourceColor } from '@material/material-color-utilities'
+import { storage } from './localStorage'
 
 function hexToArgb(hex) {
   const cleanHex = hex.replace('#', '')
@@ -20,13 +21,24 @@ function getMd3Colors(seed, isDark) {
 
 const seedColorHex = '#80DEEA'
 
-export function useMd3Theme() {
-  const [isDarkMode, setIsDarkMode] = useState(false)
+// import { useState, useMemo } from "react"
 
-  const md3Colors = useMemo(() => getMd3Colors(seedColorHex, isDarkMode), [isDarkMode])
+export function useMd3Theme() {
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    return JSON.parse(storage.get("isDarkMode") ?? "false")
+  })
+
+  const md3Colors = useMemo(
+    () => getMd3Colors(seedColorHex, isDarkMode),
+    [isDarkMode]
+  )
 
   const toggleDarkMode = () => {
-    setIsDarkMode(prev => !prev)
+    setIsDarkMode(prev => {
+      const next = !prev
+      storage.set("isDarkMode", JSON.stringify(next))
+      return next
+    })
   }
 
   return {
@@ -36,3 +48,4 @@ export function useMd3Theme() {
     toggleDarkMode,
   }
 }
+
